@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo Usuario - Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo MiTienda">
+      <span>MiTienda</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="cart">🛒 Cart (0)</div>
+  </header>
+
+  <!-- Contenedor Admin -->
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Panel Admin</h2>
+      <ul>
+        <li>Productos
+          <ul>
+            <li><a href="admin-producto-nuevo.html">Nuevo Producto</a></li>
+            <li><a href="admin-producto-editar.html">Editar Producto</a></li>
+            <li><a href="admin-producto-mostrar.html">Mostrar Productos</a></li>
+          </ul>
+        </li>
+        <li>Usuarios
+          <ul>
+            <li><a href="admin-usuario-nuevo.html" class="active">Nuevo Usuario</a></li>
+            <li><a href="admin-usuario-editar.html">Editar Usuario</a></li>
+            <li><a href="admin-usuario-mostrar.html">Mostrar Usuarios</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="admin-main">
+      <h1>Registro de Usuario</h1>
+
+      <form class="form-usuario">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre completo">
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" placeholder="Ingrese correo">
+
+        <label for="contraseña">Contraseña</label>
+        <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese contraseña">
+
+        <label for="confirmar">Confirmar Contraseña</label>
+        <input type="password" id="confirmar" name="confirmar" placeholder="Confirmar contraseña">
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Ingrese teléfono">
+
+        <!-- Select Región y Comuna -->
+        <div class="selects">
+          <div class="select-region">
+            <label for="region">Seleccione Región</label>
+            <select id="region" name="region">
+              <option value="">--Seleccione la Región--</option>
+              <option>Región de Arica y Parinacota</option>
+              <option>Región de Tarapacá</option>
+              <option>Región de Antofagasta</option>
+              <option>Región de Atacama</option>
+              <option>Región de Coquimbo</option>
+              <option>Región de Valparaíso</option>
+              <option>Región Metropolitana</option>
+              <option>Región del Libertador General Bernardo O'Higgins</option>
+              <option>Región del Maule</option>
+              <option>Región de Ñuble</option>
+              <option>Región del Biobío</option>
+              <option>Región de La Araucanía</option>
+              <option>Región de Los Ríos</option>
+              <option>Región de Los Lagos</option>
+              <option>Región de Aysén</option>
+              <option>Región de Magallanes</option>
+            </select>
+          </div>
+
+          <div class="select-comuna">
+            <label for="comuna">Seleccione Comuna</label>
+            <select id="comuna" name="comuna">
+              <option value="">--Seleccione la Comuna--</option>
+              <option>Santiago</option>
+              <option>Valparaíso</option>
+              <option>Viña del Mar</option>
+              <option>Concepción</option>
+              <option>La Serena</option>
+              <option>Antofagasta</option>
+              <option>Rancagua</option>
+              <option>Puerto Montt</option>
+              <option>Temuco</option>
+              <option>Copiapó</option>
+              <!-- Agregar más comunas -->
+            </select>
+          </div>
+        </div>
+
+        <button type="submit">Registrar</button>
+      </form>
+
+    </main>
+  </div>
+
+</body>
+</html>

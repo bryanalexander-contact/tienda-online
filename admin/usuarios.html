@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios - Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo MiTienda">
+      <span>MiTienda</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="cart">🛒 Cart (0)</div>
+  </header>
+
+  <!-- Contenedor Admin -->
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Panel Admin</h2>
+      <ul>
+        <li>Productos
+          <ul>
+            <li><a href="admin-producto-nuevo.html">Nuevo Producto</a></li>
+            <li><a href="admin-producto-editar.html">Editar Producto</a></li>
+            <li><a href="admin-producto-mostrar.html">Mostrar Productos</a></li>
+          </ul>
+        </li>
+        <li>Usuarios
+          <ul>
+            <li><a href="admin-usuario-nuevo.html">Nuevo Usuario</a></li>
+            <li><a href="admin-usuario-editar.html">Editar Usuario</a></li>
+            <li><a href="admin-usuario-mostrar.html" class="active">Mostrar Usuarios</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <h1>Usuarios</h1>
+        <a href="admin-usuario-nuevo.html" class="btn-nuevo">Nuevo Usuario</a>
+      </div>
+
+      <!-- Filtro alfabético -->
+      <div class="filtro">
+        <span>Filtrar por letra: </span>
+        <button>A</button>
+        <button>B</button>
+        <button>C</button>
+        <button>D</button>
+        <button>E</button>
+        <button>F</button>
+        <button>G</button>
+        <button>H</button>
+        <!-- Agregar más letras según sea necesario -->
+      </div>
+
+      <!-- Tabla de usuarios -->
+      <table class="tabla-usuarios">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>juan@mail.com</td>
+            <td>+56912345678</td>
+            <td>Administrador</td>
+            <td>
+              <a href="admin-usuario-editar.html">Editar</a>
+            </td>
+          </tr>
+          <tr>
+            <td>María López</td>
+            <td>maria@mail.com</td>
+            <td>+56987654321</td>
+            <td>Usuario</td>
+            <td>
+              <a href="admin-usuario-editar.html">Editar</a>
+            </td>
+          </tr>
+          <!-- Agregar más usuarios -->
+        </tbody>
+      </table>
+
+      <!-- Paginación -->
+      <div class="paginacion">
+        <button class="prev">«</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button class="next">»</button>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
