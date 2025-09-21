@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar Usuarios - Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Panel Usuarios</h2>
+      <ul>
+        <li><a href="mostrar-usuarios.html" class="active">Mostrar Usuarios</a></li>
+        <li><a href="nuevo-usuario.html">Nuevo Usuario</a></li>
+        <li><a href="editar-usuario.html">Editar Usuarios</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-main">
+      <h1>Mostrar Usuarios</h1>
+
+      <table class="tabla-usuarios">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Juan Pérez</td>
+            <td>juan@mail.com</td>
+            <td>+56912345678</td>
+            <td>Administrador</td>
+            <td><a href="editar-usuario.html">Editar</a></td>
+          </tr>
+          <tr>
+            <td>María López</td>
+            <td>maria@mail.com</td>
+            <td>+56987654321</td>
+            <td>Usuario</td>
+            <td><a href="editar-usuario.html">Editar</a></td>
+          </tr>
+          <!-- Agregar más usuarios -->
+        </tbody>
+      </table>
+
+      <!-- Paginación -->
+      <div class="paginacion">
+        <button class="prev">«</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="next">»</button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

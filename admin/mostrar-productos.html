@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Productos - Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <h2>Panel Productos</h2>
+            <ul>
+                <li><a href="mostrar-productos.html">Mostrar Productos</a></li>
+                <li><a href="nuevo-producto.html">Añadir Nuevo Producto</a></li>
+                <li><a href="editar-producto.html">Editar Productos</a></li>
+            </ul>
+        </aside>
+
+        <main class="admin-main">
+            <h1>Mostrar Productos</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Producto A</td>
+                        <td>$99.99</td>
+                        <td>Electrónica</td>
+                        <td>
+                            <a href="editar-producto.html">Editar</a>
+                            <a href="#">Eliminar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Producto B</td>
+                        <td>$49.99</td>
+                        <td>Hogar</td>
+                        <td>
+                            <a href="editar-producto.html">Editar</a>
+                            <a href="#">Eliminar</a>
+                        </td>
+                    </tr>
+                    <!-- Más productos -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>
