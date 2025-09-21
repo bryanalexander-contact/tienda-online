@@ -3,36 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda Online</title>
+    <title>Blog 2 - MiTienda</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- Cabecera -->
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo-titulo">
-                <img src="https://placeholder-image-service.onrender.com/image/40x40?prompt=Simple+elegant+company+logo+with+minimal+design&id=logo-header" 
-                     alt="Logo de la empresa" class="logo">
-                <h1>Mi Tienda</h1>
-            </div>
-            <nav class="nav">
-                <a href="#">Home</a>
-                <a href="#">Productos</a>
-                <a href="#">Nosotros</a>
-                <a href="#">Blogs</a>
-                <a href="#">Contacto</a>
-            </nav>
-            <div class="carrito">
-                <div class="cart-icon">
-                    <img src="https://placeholder-image-service.onrender.com/image/30x30?prompt=Shopping+cart+icon+with+simple+design&id=cart-icon" alt="Carrito">
-                    <span>0</span>
-                </div>
-            </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <h1>TiendaOnline</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li> |
+                <li><a href="productos.html">Productos</a></li> |
+                <li><a href="nosotros.html">Nosotros</a></li> |
+                <li><a href="blogs.html">Blog</a></li> |
+                <li><a href="contacto.html">Contacto</a></li> |
+                <li><a href="login.html">Iniciar Sesión</a></li> |
+                <li><a href="registro.html">Registro</a></li>
+            </ul>
+        </nav>
+        <div class="carrito">
+            <a href="#"><img src="../img/cart.jpg" alt="Carrito de compras"></a>
         </div>
     </header>
 
-    <!-- Contenido principal -->
-    <main class="main">
+    <!-- MAIN -->
+    <main>
         <h2>Comunicado importante</h2>
 
         <div class="contenido">
@@ -48,11 +46,25 @@
         </div>
     </main>
 
-    <!-- Pie de página -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2023 Mi Tienda. Todos los derechos reservados.</p>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-left">
+            <h3>TiendaOnline</h3>
+            <p>Category X | Category Y | Category Z</p>
+            <div class="tarjetas">
+                <span>VISA</span>
+                <span>MasterCard</span>
+                <span>Amex</span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <h3>Quedemos en contacto</h3>
+            <form action="#">
+                <input type="email" placeholder="Enter email" required>
+                <button type="submit">Suscribirse</button>
+            </form>
         </div>
     </footer>
+
 </body>
 </html>

@@ -3,47 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio de Sesión</title>
+  <title>Inicio de Sesión - MiTienda</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <!-- Header igual al de index.html -->
+
+  <!-- HEADER -->
   <header>
     <div class="logo">
-      <img src="img/logo.png" alt="Logo MiTienda">
-      <span>MiTienda</span>
+      <h1>TiendaOnline</h1>
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="productos.html">Productos</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="blogs.html">Blogs</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="../index.html">Home</a></li> |
+        <li><a href="productos.html">Productos</a></li> |
+        <li><a href="nosotros.html">Nosotros</a></li> |
+        <li><a href="blogs.html">Blog</a></li> |
+        <li><a href="contacto.html">Contacto</a></li> |
+        <li><a href="login.html">Iniciar Sesión</a></li> |
+        <li><a href="registro.html">Registro</a></li>
       </ul>
     </nav>
-    <div class="cart">🛒 Cart (0)</div>
+    <div class="carrito">
+      <a href="#"><img src="../img/cart.jpg" alt="Carrito de compras"></a>
+    </div>
   </header>
 
-  <!-- Main -->
+  <!-- MAIN -->
   <main>
     <h1>MiTienda</h1>
     <div class="login-container">
       <h2>Inicio de sesión</h2>
-      <form>
+      <form id="loginForm">
         <label for="correo">CORREO</label>
-        <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo">
+        <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
 
         <label for="contrasena">CONTRASEÑA</label>
-        <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña">
+        <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
 
         <button type="submit">Iniciar sesión</button>
       </form>
     </div>
   </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <h3>TiendaOnline</h3>
+      <p>Category X | Category Y | Category Z</p>
+      <div class="tarjetas">
+        <span>VISA</span>
+        <span>MasterCard</span>
+        <span>Amex</span>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <h3>Quedemos en contacto</h3>
+      <form action="#">
+        <input type="email" placeholder="Enter email" required>
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
   <script src="../scripts/users-init.js"></script>
   <script src="../scripts/login.js"></script>
-
 
 </body>
 </html>

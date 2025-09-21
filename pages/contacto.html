@@ -1,53 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio de Contacto</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - MiTienda</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <!-- Encabezado -->
+
+  <!-- HEADER -->
   <header>
-    <div class="logo-sitio">
-      Site Name
+    <div class="logo">
+      <h1>TiendaOnline</h1>
     </div>
-    
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Blogs</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="../index.html">Home</a></li> |
+        <li><a href="productos.html">Productos</a></li> |
+        <li><a href="nosotros.html">Nosotros</a></li> |
+        <li><a href="blogs.html">Blog</a></li> |
+        <li><a href="contacto.html">Contacto</a></li> |
+        <li><a href="login.html">Iniciar Sesión</a></li> |
+        <li><a href="registro.html">Registro</a></li>
       </ul>
     </nav>
-    
-    <div class="carro-compras">🛒 Carrito</div>
+    <div class="carrito">
+      <a href="#"><img src="../img/cart.jpg" alt="Carrito de compras"></a>
+    </div>
   </header>
 
-  <!-- Contenido principal -->
+  <!-- MAIN -->
   <main>
-    <section class="seccion-logo">
-      <div class="logo-empresa">Logo Empresa</div>
-      <h1 class="nombre-empresa">Nombre de Empresa</h1>
-    </section>
-
     <section class="formulario-contacto">
-      <h2>Formulario de Contacto</h2>
-      <form>
+      <h1>Contacto</h1>
+      <form id="contactForm">
         <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required />
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
 
         <label for="correo">Correo electrónico</label>
-        <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required />
+        <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
 
-        <label for="mensaje">Contenido</label>
+        <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
 
         <button type="submit">Enviar mensaje</button>
       </form>
     </section>
   </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <h3>TiendaOnline</h3>
+      <p>Category X | Category Y | Category Z</p>
+      <div class="tarjetas">
+        <span>VISA</span>
+        <span>MasterCard</span>
+        <span>Amex</span>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <h3>Quedemos en contacto</h3>
+      <form action="#">
+        <input type="email" placeholder="Enter email" required>
+        <button type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </footer>
+
 </body>
 </html>
