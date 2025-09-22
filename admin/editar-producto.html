@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Producto - Admin</title>
-    <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Producto - Admin</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="admin-container">
-        <aside class="sidebar">
-            <h2>Panel Productos</h2>
-            <ul>
-                <li><a href="mostrar-productos.html">Mostrar Productos</a></li>
-                <li><a href="nuevo-producto.html">Añadir Nuevo Producto</a></li>
-                <li><a href="editar-producto.html">Editar Productos</a></li>
-            </ul>
-        </aside>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Panel Productos</h2>
+      <ul>
+        <li><a href="mostrar-productos.html">Mostrar Productos</a></li>
+        <li><a href="nuevo-producto.html">Añadir Nuevo Producto</a></li>
+        <li><a href="editar-producto.html" class="active">Editar Productos</a></li>
+      </ul>
+    </aside>
 
-        <main class="admin-main">
-            <h1>Editar Producto</h1>
-            <p>Selecciona un producto de la lista de <a href="mostrar-productos.html">Mostrar Productos</a> para editarlo.</p>
-        </main>
-    </div>
+    <main class="admin-main">
+      <h1>Editar Producto</h1>
+
+      <!-- Buscar producto por ID -->
+      <form id="buscarProductoForm">
+        <label for="productoId">ID del producto</label>
+        <input type="number" id="productoId" required>
+        <button type="submit">Buscar</button>
+      </form>
+
+      <!-- Formulario de edición -->
+      <form id="formEditar" style="display:none; margin-top:20px;">
+        <label for="nombre">Nombre del Producto</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="precio">Precio</label>
+        <input type="number" id="precio" name="precio" required>
+
+        <label for="categoria">Categoría</label>
+        <input type="text" id="categoria" name="categoria" required>
+
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" required></textarea>
+
+        <label for="imagen">Imagen (URL)</label>
+        <input type="text" id="imagen" name="imagen">
+
+        <button type="submit">Actualizar Producto</button>
+      </form>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../scripts/productos.js"></script>
+  <script src="../scripts/editar-producto.js"></script>
 </body>
 </html>

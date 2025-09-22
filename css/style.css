@@ -2051,3 +2051,79 @@ body {
         padding: 20px;
     }
 }
+
+
+
+/*=======================
+  css de panel de productos
+  =======================*/
+
+/* Admin Panel */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: #222;
+  color: #fff;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar ul li a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 30px;
+  background: #f4f4f4;
+}
+
+.admin-main h1 {
+  margin-bottom: 20px;
+}
+
+.admin-main form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.admin-main form input,
+.admin-main form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+.admin-main form button {
+  padding: 10px 20px;
+  background: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-main form button:hover {
+  background: #555;
+}
