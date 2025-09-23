@@ -13,14 +13,56 @@
       <ul>
         <li><a href="mostrar-usuarios.html">Mostrar Usuarios</a></li>
         <li><a href="nuevo-usuario.html">Nuevo Usuario</a></li>
-        <li><a href="editar-usuario.html" class="active">Editar Usuarios</a></li>
       </ul>
     </aside>
 
     <main class="admin-main">
       <h1>Editar Usuario</h1>
-      <p>Selecciona un usuario desde <a href="mostrar-usuarios.html">Mostrar Usuarios</a> para editar sus datos.</p>
+      <form id="form-editar-usuario">
+
+        <label for="run">RUN</label>
+        <input type="text" id="run" name="run" required>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" maxlength="50" required>
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" maxlength="100" required>
+
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" maxlength="100" required>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+
+        <label for="tipoUsuario">Tipo de Usuario</label>
+        <select id="tipoUsuario" name="tipoUsuario" required>
+          <option value="administrador">Administrador</option>
+          <option value="cliente">Cliente</option>
+          <option value="vendedor">Vendedor</option>
+        </select>
+
+        <label for="region">Región</label>
+        <select id="region" name="region" required>
+          <!-- Se llenará dinámicamente con JS -->
+        </select>
+
+        <label for="comuna">Comuna</label>
+        <select id="comuna" name="comuna" required>
+          <!-- Se llenará según región seleccionada -->
+        </select>
+
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" name="direccion" maxlength="300" required>
+
+        <button type="submit">Guardar Cambios</button>
+      </form>
     </main>
   </div>
+
+  <!-- Scripts -->
+  <script src="../scripts/regiones-comunas.js"></script>
+  <script src="../scripts/usuarios-storage.js"></script>
+  <script src="../scripts/editar-usuario.js"></script>
 </body>
 </html>

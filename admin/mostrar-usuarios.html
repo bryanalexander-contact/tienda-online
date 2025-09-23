@@ -13,51 +13,32 @@
       <ul>
         <li><a href="mostrar-usuarios.html" class="active">Mostrar Usuarios</a></li>
         <li><a href="nuevo-usuario.html">Nuevo Usuario</a></li>
-        <li><a href="editar-usuario.html">Editar Usuarios</a></li>
       </ul>
     </aside>
 
     <main class="admin-main">
       <h1>Mostrar Usuarios</h1>
-
-      <table class="tabla-usuarios">
+      <table>
         <thead>
           <tr>
+            <th>RUN</th>
             <th>Nombre</th>
             <th>Correo</th>
-            <th>Teléfono</th>
             <th>Rol</th>
+            <th>Región / Comuna</th>
+            <th>Dirección</th>
             <th>Acciones</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Juan Pérez</td>
-            <td>juan@mail.com</td>
-            <td>+56912345678</td>
-            <td>Administrador</td>
-            <td><a href="editar-usuario.html">Editar</a></td>
-          </tr>
-          <tr>
-            <td>María López</td>
-            <td>maria@mail.com</td>
-            <td>+56987654321</td>
-            <td>Usuario</td>
-            <td><a href="editar-usuario.html">Editar</a></td>
-          </tr>
-          <!-- Agregar más usuarios -->
+        <tbody id="tabla-usuarios">
+          <!-- Usuarios se llenan dinámicamente con JS -->
         </tbody>
       </table>
-
-      <!-- Paginación -->
-      <div class="paginacion">
-        <button class="prev">«</button>
-        <button class="active">1</button>
-        <button>2</button>
-        <button>3</button>
-        <button class="next">»</button>
-      </div>
     </main>
   </div>
+
+  <!-- Scripts -->
+  <script src="../scripts/usuarios-storage.js"></script>
+  <script src="../scripts/listar-usuarios.js"></script>
 </body>
 </html>
