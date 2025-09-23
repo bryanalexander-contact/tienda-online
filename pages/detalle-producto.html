@@ -32,46 +32,15 @@
 
   <!-- MAIN -->
   <div class="container">
-    <section class="product-section">
-      <div class="image-gallery">
-        <div class="main-image">
-          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Auriculares de alta calidad">
-        </div>
-        <div class="thumbnails">
-          <div class="thumbnail active">
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e" alt="Auriculares frontal">
-          </div>
-          <div class="thumbnail">
-            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90" alt="Auriculares lateral">
-          </div>
-          <div class="thumbnail">
-            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b" alt="Almohadillas acolchonadas">
-          </div>
-          <div class="thumbnail">
-            <img src="https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b" alt="Auriculares plegados">
-          </div>
-        </div>
-      </div>
-      <div class="product-info">
-        <h2 class="product-name">Auriculares Premium HD</h2>
-        <div class="product-price">$149.99</div>
-        <p class="product-description">
-          Experimenta el sonido como nunca antes con nuestros auriculares premium...
-        </p>
-        <div class="quantity-selector">
-          <label for="quantity">Cantidad:</label>
-          <input type="number" id="quantity" class="quantity-input" min="1" value="1">
-        </div>
-        <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Añadir al carrito</button>
-      </div>
-    </section>
+    <!-- Aquí se pintará el producto dinámicamente -->
+    <section id="detalle-producto"></section>
 
     <div class="divider"></div>
 
     <section class="related-products">
       <h3 class="related-title">Productos Relacionados</h3>
       <div class="related-grid">
-        <!-- Mantener productos relacionados tal cual -->
+        <!-- Puedes mantener estáticos o luego también dinámicos -->
       </div>
     </section>
   </div>
@@ -95,5 +64,9 @@
       </form>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="../scripts/productos.js"></script>
+  <script src="../scripts/detalle-producto.js"></script>
 </body>
 </html>
