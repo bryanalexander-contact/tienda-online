@@ -12,9 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Verifica si la imagen es base64 o URL
   let imagen = producto.imagen || '../img/placeholder.png';
-  
+
   contenedor.innerHTML = `
     <div class="product-section">
       <div class="image-gallery">
@@ -34,4 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
   `;
+
+  const btnCarrito = contenedor.querySelector(".add-to-cart");
+  btnCarrito.addEventListener("click", () => {
+    const cantidad = parseInt(document.getElementById("quantity").value) || 1;
+    addToCart(producto, cantidad);
+  });
 });

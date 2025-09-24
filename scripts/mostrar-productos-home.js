@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Mostrar todos los productos o solo los 4 más recientes
   const productosAMostrar = productos.slice(-4).reverse();
 
   productosAMostrar.forEach(p => {
@@ -24,16 +23,26 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>${p.descripcion || ''}</p>
       <p><strong>Precio:</strong> $${p.precio.toFixed(2)}</p>
       <button class="ver-detalle" data-id="${p.id}">Ver detalle</button>
+      <button class="add-to-cart" data-id="${p.id}">Añadir al carrito</button>
     `;
     contenedor.appendChild(card);
   });
 
-  // Botón "Ver detalle" funcional
+  // Botón "Ver detalle"
   contenedor.querySelectorAll(".ver-detalle").forEach(btn => {
     btn.addEventListener("click", e => {
       const id = e.target.dataset.id;
       localStorage.setItem("detalleProductoId", id);
       window.location.href = "pages/detalle-producto.html";
+    });
+  });
+
+  // Botón "Añadir al carrito"
+  contenedor.querySelectorAll(".add-to-cart").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const id = parseInt(e.target.dataset.id);
+      const producto = productos.find(p => p.id === id);
+      addToCart(producto, 1);
     });
   });
 });

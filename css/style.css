@@ -2127,3 +2127,120 @@ body {
 .admin-main form button:hover {
   background: #555;
 }
+
+
+
+
+
+
+/* ===========================
+   CARRITO DE COMPRAS
+=========================== */
+.carrito-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.carrito-container h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 26px;
+  color: #222;
+}
+
+/* Tabla del carrito */
+.carrito-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.carrito-table thead {
+  background: #f0f0f0;
+}
+
+.carrito-table th,
+.carrito-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.carrito-table th {
+  font-weight: bold;
+}
+
+/* Imagen dentro del carrito */
+.carrito-table img {
+  width: 60px;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Botón eliminar */
+.btn-remove {
+  background: #ff4444;
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-remove:hover {
+  background: #cc0000;
+}
+
+/* Sección del total */
+.carrito-total {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Botones de acción */
+.carrito-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.carrito-actions button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.carrito-actions button:hover {
+  background: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carrito-table th,
+  .carrito-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .carrito-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .carrito-actions button {
+    width: 100%;
+  }
+}
