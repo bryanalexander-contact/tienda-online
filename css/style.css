@@ -1486,6 +1486,80 @@ nav ul li a {
 /* ==================
     DETALLE PRODUCTO
    ==================*/
+.related-products {
+  margin-top: 50px;
+}
+
+.related-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #222;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.related-grid .producto-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.related-grid .producto-card h2 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.related-grid .producto-card .precio {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #007B00;
+}
+
+.related-grid .producto-card button {
+  padding: 6px 12px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.related-grid .producto-card button:hover {
+  background-color: #444;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .related-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .related-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Reset y estilos base*/
 * {

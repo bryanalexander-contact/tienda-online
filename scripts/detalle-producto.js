@@ -1,4 +1,3 @@
-// scripts/detalle-producto.js
 document.addEventListener("DOMContentLoaded", () => {
   const contenedor = document.getElementById("detalle-producto");
   if (!contenedor) return;
@@ -14,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let imagen = producto.imagen || '../img/placeholder.png';
 
+  // Mostrar detalle principal
   contenedor.innerHTML = `
     <div class="product-section">
       <div class="image-gallery">
@@ -39,4 +39,44 @@ document.addEventListener("DOMContentLoaded", () => {
     const cantidad = parseInt(document.getElementById("quantity").value) || 1;
     addToCart(producto, cantidad);
   });
+
+  // Productos relacionados
+  const relatedContainer = document.querySelector(".related-grid");
+  if (relatedContainer) {
+    const relacionados = productos
+      .filter(p => p.categoria === producto.categoria && p.id !== producto.id)
+      .slice(0, 5); // mostrar máximo 5 productos
+
+    relatedContainer.innerHTML = relacionados.map(p => `
+      <div class="producto-card">
+        <img src="${p.imagen || '../img/placeholder.png'}" alt="${p.nombre}">
+        <h2>${p.nombre}</h2>
+        <div class="precio">$${p.precio.toFixed(2)}</div>
+        <button onclick="verProducto(${p.id})">Ver Producto</button>
+      </div>
+    `).join('');
+  }
 });
+
+// Función para ir al detalle de otro producto
+function verProducto(id) {
+  localStorage.setItem("detalleProductoId", id);
+  window.location.reload(); // recargar la página para mostrar el nuevo producto
+}
+
+
+// Funcion para añadir al carrito
+
+function addToCart(producto, cantidad) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  
+  const existing = carrito.find(item => item.id === producto.id);
+  if (existing) {
+    existing.cantidad += cantidad;
+  } else {
+    carrito.push({ ...producto, cantidad });
+  }
+  
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  alert(`${cantidad} ${producto.nombre} añadido(s) al carrito`);
+}
