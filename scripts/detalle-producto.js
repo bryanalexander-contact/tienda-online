@@ -12,11 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // Verifica si la imagen es base64 o URL
+  let imagen = producto.imagen || '../img/placeholder.png';
+  
   contenedor.innerHTML = `
     <div class="product-section">
       <div class="image-gallery">
         <div class="main-image">
-          <img src="${producto.imagen || '../img/placeholder.png'}" alt="${producto.nombre}">
+          <img src="${imagen}" alt="${producto.nombre}">
         </div>
       </div>
       <div class="product-info">

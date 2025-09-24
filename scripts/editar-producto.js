@@ -31,18 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
       precio: parseFloat(form.precio.value),
       stock: parseInt(form.stock.value),
       stockCritico: parseInt(form.stockCritico.value) || null,
-      categoria: form.categoria.value,
-      imagen: form.imagen.value.trim()
+      categoria: form.categoria.value
     };
 
-    if (datos.codigo.length < 3) return alert('Código mínimo 3 caracteres');
-    if (!datos.nombre) return alert('Nombre requerido');
-    if (datos.precio < 0) return alert('Precio mínimo 0');
-    if (datos.stock < 0) return alert('Stock mínimo 0');
-    if (!datos.categoria) return alert('Seleccione categoría');
-
-    actualizarProducto(idEditar, datos);
-    alert('Producto actualizado!');
-    window.location.href = 'mostrar-productos.html';
+    const archivo = form.imagen.files ? form.imagen.files[0] : null;
+    if (archivo) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        datos.imagen = reader.result;
+        actualizarProducto(idEditar, datos);
+        alert('Producto actualizado!');
+        window.location.href = 'mostrar-productos.html';
+      };
+      reader.readAsDataURL(archivo);
+    } else {
+      datos.imagen = form.imagen.value.trim() || '';
+      actualizarProducto(idEditar, datos);
+      alert('Producto actualizado!');
+      window.location.href = 'mostrar-productos.html';
+    }
   });
 });

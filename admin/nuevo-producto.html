@@ -45,8 +45,11 @@
         <option value="Hogar">Hogar</option>
       </select>
 
-      <label for="imagen">Imagen (URL)</label>
-      <input type="text" id="imagen" name="imagen">
+      <label for="imagenArchivo">Imagen (archivo)</label>
+      <input type="file" id="imagenArchivo" accept="image/*">
+
+      <label for="imagenUrl">O ingresa URL de imagen</label>
+      <input type="text" id="imagenUrl" placeholder="https://...">
 
       <button type="submit">Agregar Producto</button>
     </form>
@@ -54,6 +57,40 @@
 </div>
 
 <script src="../scripts/productos.js"></script>
-<script src="../scripts/crear-producto.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('form-nuevo-producto');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const archivo = document.getElementById('imagenArchivo').files[0];
+    const url = document.getElementById('imagenUrl').value.trim();
+
+    function agregarProductoConImagen(imagenFinal) {
+      const producto = {
+        codigo: form.codigo.value.trim(),
+        nombre: form.nombre.value.trim(),
+        descripcion: form.descripcion.value.trim(),
+        precio: parseFloat(form.precio.value),
+        stock: parseInt(form.stock.value),
+        stockCritico: parseInt(form.stockCritico.value) || null,
+        categoria: form.categoria.value,
+        imagen: imagenFinal
+      };
+      agregarProducto(producto);
+      alert('Producto agregado correctamente!');
+      form.reset();
+    }
+
+    if (archivo) {
+      const reader = new FileReader();
+      reader.onload = () => agregarProductoConImagen(reader.result);
+      reader.readAsDataURL(archivo);
+    } else {
+      agregarProductoConImagen(url || '');
+    }
+  });
+});
+</script>
 </body>
 </html>

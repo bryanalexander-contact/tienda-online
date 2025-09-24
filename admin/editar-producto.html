@@ -45,8 +45,11 @@
         <option value="Hogar">Hogar</option>
       </select>
 
-      <label for="imagen">Imagen (URL)</label>
-      <input type="text" id="imagen" name="imagen">
+      <label for="imagenArchivo">Imagen (archivo)</label>
+      <input type="file" id="imagenArchivo" accept="image/*">
+
+      <label for="imagenUrl">O ingresa URL de imagen</label>
+      <input type="text" id="imagenUrl" placeholder="https://...">
 
       <button type="submit">Guardar Cambios</button>
     </form>
@@ -54,6 +57,59 @@
 </div>
 
 <script src="../scripts/productos.js"></script>
-<script src="../scripts/editar-producto.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('form-editar-producto');
+  const idEditar = parseInt(localStorage.getItem('editarProductoId'));
+  const producto = obtenerProducto(idEditar);
+
+  if (!producto) {
+    alert('Producto no encontrado');
+    window.location.href = 'mostrar-productos.html';
+    return;
+  }
+
+  // Rellenar formulario con datos existentes
+  form.codigo.value = producto.codigo;
+  form.nombre.value = producto.nombre;
+  form.descripcion.value = producto.descripcion || '';
+  form.precio.value = producto.precio;
+  form.stock.value = producto.stock;
+  form.stockCritico.value = producto.stockCritico || '';
+  form.categoria.value = producto.categoria;
+  document.getElementById('imagenUrl').value = producto.imagen || '';
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const archivo = document.getElementById('imagenArchivo').files[0];
+    const url = document.getElementById('imagenUrl').value.trim();
+
+    function actualizarConImagen(imagenFinal) {
+      const datos = {
+        codigo: form.codigo.value.trim(),
+        nombre: form.nombre.value.trim(),
+        descripcion: form.descripcion.value.trim(),
+        precio: parseFloat(form.precio.value),
+        stock: parseInt(form.stock.value),
+        stockCritico: parseInt(form.stockCritico.value) || null,
+        categoria: form.categoria.value,
+        imagen: imagenFinal
+      };
+      actualizarProducto(idEditar, datos);
+      alert('Producto actualizado!');
+      window.location.href = 'mostrar-productos.html';
+    }
+
+    if (archivo) {
+      const reader = new FileReader();
+      reader.onload = () => actualizarConImagen(reader.result);
+      reader.readAsDataURL(archivo);
+    } else {
+      actualizarConImagen(url || '');
+    }
+  });
+});
+</script>
 </body>
 </html>

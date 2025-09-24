@@ -49,27 +49,9 @@
     <!-- LISTA DE PRODUCTOS -->
     <section class="productos">
       <h2>Productos destacados</h2>
-      <div class="grid-productos">
-        <div class="producto">
-          <img src="img/producto1.jpg" alt="Producto 1" />
-          <h3>Producto 1</h3>
-          <p class="precio">$10.000</p>
-        </div>
-        <div class="producto">
-          <img src="img/producto2.jpg" alt="Producto 2" />
-          <h3>Producto 2</h3>
-          <p class="precio">$15.000</p>
-        </div>
-        <div class="producto">
-          <img src="img/producto3.jpg" alt="Producto 3" />
-          <h3>Producto 3</h3>
-          <p class="precio">$20.000</p>
-        </div>
-        <div class="producto">
-          <img src="img/producto4.jpg" alt="Producto 4" />
-          <h3>Producto 4</h3>
-          <p class="precio">$25.000</p>
-        </div>
+      <!-- Contenedor dinámico -->
+      <div id="productos-home" class="grid-productos">
+        <!-- Los productos se pintarán aquí desde localStorage -->
       </div>
     </section>
 
@@ -93,6 +75,8 @@
         </form>
       </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="scripts/productos.js"></script>
     <script src="scripts/mostrar-productos-home.js"></script>
   </body>
