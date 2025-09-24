@@ -40,9 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Botón "Añadir al carrito"
   contenedor.querySelectorAll(".add-to-cart").forEach(btn => {
     btn.addEventListener("click", e => {
-      const id = parseInt(e.target.dataset.id);
-      const producto = productos.find(p => p.id === id);
-      addToCart(producto, 1);
+      const id = e.target.dataset.id; // 👈 lo dejamos como string
+      const producto = productos.find(p => p.id == id); // 👈 comparación flexible
+      if (producto) {
+        addToCart(producto, 1);
+      } else {
+        console.error("Producto no encontrado en localStorage");
+      }
     });
   });
 });
