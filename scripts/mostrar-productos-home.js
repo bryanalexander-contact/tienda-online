@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  const productosAMostrar = productos.slice(-4).reverse();
-
-  productosAMostrar.forEach(p => {
+  // Mostrar todos los productos (no solo los últimos 4)
+  productos.forEach(p => {
     const card = document.createElement("div");
     card.classList.add("producto-card");
+
     card.innerHTML = `
       <a href="pages/detalle-producto.html">
         <img src="${p.imagen || 'img/placeholder.png'}" alt="${p.nombre}">
@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <button class="ver-detalle" data-id="${p.id}">Ver detalle</button>
       <button class="add-to-cart" data-id="${p.id}">Añadir al carrito</button>
     `;
-    contenedor.appendChild(card);
+
+    contenedor.appendChild(card); // 👈 agregamos cada producto sin reemplazar
   });
 
   // Botón "Ver detalle"
@@ -40,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Botón "Añadir al carrito"
   contenedor.querySelectorAll(".add-to-cart").forEach(btn => {
     btn.addEventListener("click", e => {
-      const id = e.target.dataset.id; // 👈 lo dejamos como string
-      const producto = productos.find(p => p.id == id); // 👈 comparación flexible
+      const id = e.target.dataset.id;
+      const producto = productos.find(p => p.id == id);
       if (producto) {
         addToCart(producto, 1);
       } else {
