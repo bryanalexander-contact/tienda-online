@@ -10,37 +10,28 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Mostrar todos los productos (no solo los últimos 4)
   productos.forEach(p => {
     const card = document.createElement("div");
     card.classList.add("producto-card");
 
+    // contenido de la tarjeta (sin <a> en la imagen)
     card.innerHTML = `
-      <a href="pages/detalle-producto.html">
-        <img src="${p.imagen || 'img/placeholder.png'}" alt="${p.nombre}">
-      </a>
+      <img src="${p.imagen || 'img/placeholder.png'}" alt="${p.nombre}">
       <h3>${p.nombre}</h3>
       <p>${p.descripcion || ''}</p>
       <p><strong>Precio:</strong> $${p.precio.toFixed(2)}</p>
-      <button class="ver-detalle" data-id="${p.id}">Ver detalle</button>
       <button class="add-to-cart" data-id="${p.id}">Añadir al carrito</button>
     `;
 
-    contenedor.appendChild(card); // 👈 agregamos cada producto sin reemplazar
-  });
-
-  // Botón "Ver detalle"
-  contenedor.querySelectorAll(".ver-detalle").forEach(btn => {
-    btn.addEventListener("click", e => {
-      const id = e.target.dataset.id;
-      localStorage.setItem("detalleProductoId", id);
+    // 👉 evento click en toda la tarjeta
+    card.addEventListener("click", () => {
+      localStorage.setItem("detalleProductoId", p.id);
       window.location.href = "pages/detalle-producto.html";
     });
-  });
 
-  // Botón "Añadir al carrito"
-  contenedor.querySelectorAll(".add-to-cart").forEach(btn => {
-    btn.addEventListener("click", e => {
+    // 👉 detener propagación cuando hacen click en el botón de carrito
+    card.querySelector(".add-to-cart").addEventListener("click", e => {
+      e.stopPropagation(); // evita que se dispare el evento de la tarjeta
       const id = e.target.dataset.id;
       const producto = productos.find(p => p.id == id);
       if (producto) {
@@ -49,5 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Producto no encontrado en localStorage");
       }
     });
+
+    contenedor.appendChild(card);
   });
 });

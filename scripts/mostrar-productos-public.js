@@ -18,26 +18,30 @@ document.addEventListener("DOMContentLoaded", () => {
   productos.forEach(p => {
     const card = document.createElement("div");
     card.classList.add("producto-card");
+
+    // La tarjeta completa es clickeable
     card.innerHTML = `
       <img src="${p.imagen || '../img/placeholder.png'}" alt="${p.nombre}">
       <h3>${p.nombre}</h3>
       <p>${p.descripcion || ''}</p>
       <p><strong>Precio:</strong> $${p.precio.toFixed(2)}</p>
       <div class="acciones-producto">
-        <button class="ver-detalle" data-id="${p.id}">Ver detalle</button>
-        <button class="add-to-cart" data-id="${p.id}"><i class="fas fa-cart-plus"></i> Añadir</button>
+        <button class="add-to-cart" data-id="${p.id}">
+          <i class="fas fa-cart-plus"></i> Añadir
+        </button>
       </div>
     `;
-    contenedor.appendChild(card);
-  });
 
-  // Manejar botón "Ver detalle"
-  contenedor.querySelectorAll(".ver-detalle").forEach(btn => {
-    btn.addEventListener("click", e => {
-      const id = e.target.dataset.id;
-      localStorage.setItem("detalleProductoId", id);
+    // Clic en la tarjeta → abrir detalle
+    card.addEventListener("click", e => {
+      // Evitar que el clic en "Añadir al carrito" abra el detalle
+      if (e.target.closest(".add-to-cart")) return;
+
+      localStorage.setItem("detalleProductoId", p.id);
       window.location.href = "detalle-producto.html";
     });
+
+    contenedor.appendChild(card);
   });
 
   // Manejar botón "Añadir al carrito"

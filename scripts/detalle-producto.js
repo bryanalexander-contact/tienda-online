@@ -48,25 +48,25 @@ document.addEventListener("DOMContentLoaded", () => {
       .slice(0, 5); // mostrar máximo 5 productos
 
     relatedContainer.innerHTML = relacionados.map(p => `
-      <div class="producto-card">
+      <div class="producto-card" data-id="${p.id}">
         <img src="${p.imagen || '../img/placeholder.png'}" alt="${p.nombre}">
         <h2>${p.nombre}</h2>
         <div class="precio">$${p.precio.toFixed(2)}</div>
-        <button onclick="verProducto(${p.id})">Ver Producto</button>
       </div>
     `).join('');
+
+    // Hacer que cada tarjeta clickeeable
+    relatedContainer.querySelectorAll(".producto-card").forEach(card => {
+      card.addEventListener("click", () => {
+        const id = parseInt(card.dataset.id);
+        localStorage.setItem("detalleProductoId", id);
+        window.location.reload();
+      });
+    });
   }
 });
 
-// Función para ir al detalle de otro producto
-function verProducto(id) {
-  localStorage.setItem("detalleProductoId", id);
-  window.location.reload(); // recargar la página para mostrar el nuevo producto
-}
-
-
 // Funcion para añadir al carrito
-
 function addToCart(producto, cantidad) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   
