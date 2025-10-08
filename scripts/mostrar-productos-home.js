@@ -1,4 +1,3 @@
-// scripts/mostrar-productos-home.js
 document.addEventListener("DOMContentLoaded", () => {
   const contenedor = document.getElementById("productos-home");
   if (!contenedor) return;
@@ -11,29 +10,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   productos.forEach(p => {
+    // Crear tarjeta con la clase que coincide con CSS
     const card = document.createElement("div");
-    card.classList.add("producto-card");
+    card.classList.add("producto"); // ← importante: coincide con tu CSS
 
-    // contenido de la tarjeta (sin <a> en la imagen)
+    // Contenido de la tarjeta adaptado a tu CSS
     card.innerHTML = `
       <img src="${p.imagen || 'img/placeholder.png'}" alt="${p.nombre}">
       <h3>${p.nombre}</h3>
       <p>${p.descripcion || ''}</p>
-      <p><strong>Precio:</strong> $${p.precio.toFixed(2)}</p>
+      <p class="precio">$${p.precio.toFixed(2)}</p>
       <button class="add-to-cart" data-id="${p.id}">Añadir al carrito</button>
     `;
 
-    // 👉 evento click en toda la tarjeta
+    // Evento click en toda la tarjeta
     card.addEventListener("click", () => {
       localStorage.setItem("detalleProductoId", p.id);
       window.location.href = "pages/detalle-producto.html";
     });
 
-    // 👉 detener propagación cuando hacen click en el botón de carrito
-    card.querySelector(".add-to-cart").addEventListener("click", e => {
-      e.stopPropagation(); // evita que se dispare el evento de la tarjeta
+    // Detener propagación cuando hacen click en el botón de carrito
+    const boton = card.querySelector(".add-to-cart");
+    boton.addEventListener("click", e => {
+      e.stopPropagation();
       const id = e.target.dataset.id;
-      const producto = productos.find(p => p.id == id);
+      const producto = productos.find(prod => prod.id == id);
       if (producto) {
         addToCart(producto, 1);
       } else {

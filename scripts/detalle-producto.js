@@ -45,18 +45,22 @@ document.addEventListener("DOMContentLoaded", () => {
   if (relatedContainer) {
     const relacionados = productos
       .filter(p => p.categoria === producto.categoria && p.id !== producto.id)
-      .slice(0, 5); // mostrar máximo 5 productos
+      .slice(0, 8); // mostrar máximo 8 productos (4 por fila x 2 filas)
 
     relatedContainer.innerHTML = relacionados.map(p => `
-      <div class="producto-card" data-id="${p.id}">
-        <img src="${p.imagen || '../img/placeholder.png'}" alt="${p.nombre}">
-        <h2>${p.nombre}</h2>
-        <div class="precio">$${p.precio.toFixed(2)}</div>
+      <div class="related-item" data-id="${p.id}">
+        <div class="related-image">
+          <img src="${p.imagen || '../img/placeholder.png'}" alt="${p.nombre}">
+        </div>
+        <div class="related-info">
+          <h3 class="related-name">${p.nombre}</h3>
+          <div class="related-price">$${p.precio.toFixed(2)}</div>
+        </div>
       </div>
     `).join('');
 
     // Hacer que cada tarjeta clickeeable
-    relatedContainer.querySelectorAll(".producto-card").forEach(card => {
+    relatedContainer.querySelectorAll(".related-item").forEach(card => {
       card.addEventListener("click", () => {
         const id = parseInt(card.dataset.id);
         localStorage.setItem("detalleProductoId", id);
