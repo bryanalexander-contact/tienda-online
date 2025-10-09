@@ -1,13 +1,11 @@
-// scripts/carrito.js
-
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// Guardar carrito en localStorage
+// guardar carrito en localStorage
 function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-// Añadir producto al carrito
+// añadir producto al carrito
 function addToCart(producto, cantidad = 1) {
   const existente = carrito.find(item => item.id === producto.id);
 
@@ -18,10 +16,10 @@ function addToCart(producto, cantidad = 1) {
   }
 
   guardarCarrito();
-  alert("Producto añadido al carrito ✅");
+  alert("Producto añadido al carrito");
 }
 
-// Mostrar carrito en carrito.html
+// mostrar carrito en carrito.html
 function mostrarCarrito() {
   const contenedor = document.getElementById("carrito-contenedor");
   const totalElem = document.getElementById("carrito-total");
@@ -53,7 +51,7 @@ function mostrarCarrito() {
     contenedor.appendChild(row);
   });
 
-  // Eventos para inputs de cantidad
+  // eventos para inputs de cantidad
   contenedor.querySelectorAll(".cantidad-input").forEach(input => {
     input.addEventListener("change", e => {
       const index = e.target.dataset.index;
@@ -63,7 +61,7 @@ function mostrarCarrito() {
     });
   });
 
-  // Eventos para eliminar
+  // eventos para eliminar
   contenedor.querySelectorAll(".eliminar-btn").forEach(btn => {
     btn.addEventListener("click", e => {
       const index = e.target.dataset.index;
@@ -73,7 +71,7 @@ function mostrarCarrito() {
     });
   });
 
-  // Calcular total
+  // calcular el total
   const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
   totalElem.textContent = `$${total.toFixed(2)}`;
 }

@@ -1,4 +1,3 @@
-// scripts/editar-usuario.js
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-editar-usuario");
   if (!form) return;
@@ -91,12 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
     usuario.direccion = direccion;
 
     guardarUsuarios();
-    alert("✅ Usuario editado correctamente!");
+    alert("Usuario editado correctamente!");
     window.location.href = "mostrar-usuarios.html";
   });
 });
 
-// Validar correo
+// validar correo
 function validarCorreo(correo) {
   const dominios = ["@duoc.cl", "@profesor.duoc.cl", "@gmail.com"];
   if (!correo || correo.length > 100) return false;

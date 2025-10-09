@@ -1,4 +1,4 @@
-  // scripts/users-init.js
+
   document.addEventListener("DOMContentLoaded", () => {
     if (!localStorage.getItem("users")) {
       const defaultUsers = [

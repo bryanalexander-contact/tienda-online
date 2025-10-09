@@ -1,4 +1,3 @@
-// scripts/usuarios-storage.js
 
 // Inicializar usuarios en LocalStorage
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];

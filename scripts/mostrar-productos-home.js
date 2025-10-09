@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   productos.forEach(p => {
-    // Crear tarjeta con la clase que coincide con CSS
+    // Crear tarjeta 
     const card = document.createElement("div");
     card.classList.add("producto"); // ← importante: coincide con tu CSS
 
-    // Contenido de la tarjeta adaptado a tu CSS
+    // TARJETA HTML PRODUCTO
     card.innerHTML = `
       <img src="${p.imagen || 'img/placeholder.png'}" alt="${p.nombre}">
       <h3>${p.nombre}</h3>

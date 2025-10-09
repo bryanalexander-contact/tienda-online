@@ -1,4 +1,3 @@
-// scripts/editar-producto.js
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('form-editar-producto');
   if (!form) return;

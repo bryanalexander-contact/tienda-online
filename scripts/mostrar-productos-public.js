@@ -1,4 +1,3 @@
-// scripts/mostrar-productos-public.js
 document.addEventListener("DOMContentLoaded", () => {
   const contenedor = document.getElementById("lista-productos");
   if (!contenedor) return;

@@ -1,4 +1,3 @@
-// scripts/listar-usuarios.js
 document.addEventListener("DOMContentLoaded", () => {
   const tabla = document.getElementById("tabla-usuarios");
   if (!tabla) return;

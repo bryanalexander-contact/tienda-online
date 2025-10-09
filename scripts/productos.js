@@ -1,5 +1,3 @@
-  // scripts/productos.js
-
   let productos = JSON.parse(localStorage.getItem('productos')) || [];
 
   // Guardar en localStorage

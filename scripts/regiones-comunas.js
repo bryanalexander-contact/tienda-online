@@ -1,6 +1,3 @@
-// scripts/regiones-comunas.js
-
-// Objeto con todas las regiones y sus comunas
 const regiones = [
   { nombre: "Arica y Parinacota", comunas: ["Arica", "Putre", "Camarones", "General Lagos", "Codpa"] },
   { nombre: "Tarapacá", comunas: ["Iquique", "Alto Hospicio", "Pica", "Pozo Almonte", "Huara"] },
